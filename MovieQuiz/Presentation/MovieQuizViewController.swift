@@ -14,12 +14,8 @@ final class MovieQuizViewController: UIViewController {
     }
     
     struct QuizQuestion {
-      // строка с названием фильма,
-      // совпадает с названием картинки афиши фильма в Assets
       let image: String
-      // строка с вопросом о рейтинге фильма
       let text: String
-      // булевое значение (true, false), правильный ответ на вопрос
       let correctAnswer: Bool
     }
     
@@ -86,15 +82,17 @@ final class MovieQuizViewController: UIViewController {
         let questionStep = QuizStepViewModel(image: UIImage(named: model.image) ?? UIImage(), question: model.text, questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)")
         return questionStep
     }
-   private func show(quiz step: QuizStepViewModel) {
+    private func show(quiz step: QuizStepViewModel) {
+        imageView.contentMode = .scaleToFill
         imageView.image = step.image
         textLabel.text = step.question
         counterLabel.text = step.questionNumber
+        imageView.layer.borderWidth = 0
     }
     private func showAnswerResult(isCorrect: Bool) {
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 8
-        imageView.layer.cornerRadius = 6
+        imageView.layer.cornerRadius = 20
         if isCorrect == true {
             imageView.layer.borderColor = UIColor.ypGreen.cgColor
             correctAnswers += 1
