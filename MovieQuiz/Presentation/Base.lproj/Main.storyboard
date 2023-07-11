@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1uf-B1-bjW">
-                                <rect key="frame" x="20" y="54" width="374" height="808"/>
+                                <rect key="frame" x="20" y="58" width="374" height="804"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ear-cJ-vWw">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="23.5"/>
@@ -58,13 +58,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEo-nu-NYj" userLabel="Question Label">
-                                        <rect key="frame" x="0.0" y="624.5" width="374" height="103.5"/>
+                                        <rect key="frame" x="0.0" y="624.5" width="374" height="99.5"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KNN-gc-sv4">
-                                        <rect key="frame" x="0.0" y="748" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="744" width="374" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnm-MY-Xi8" userLabel="No button">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="60"/>
@@ -107,6 +107,9 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="r71-Vm-s83">
+                                <rect key="frame" x="197" y="445" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
@@ -114,10 +117,13 @@
                             <constraint firstItem="1uf-B1-bjW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LUa-99-sjW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1uf-B1-bjW" secondAttribute="bottom" id="d5s-uI-FkV"/>
                             <constraint firstItem="1uf-B1-bjW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="fRn-Gh-eW7"/>
+                            <constraint firstItem="r71-Vm-s83" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jVg-mY-DLV"/>
+                            <constraint firstItem="r71-Vm-s83" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lRr-fh-pyq"/>
                             <constraint firstItem="1uf-B1-bjW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="wRX-nx-gVS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="r71-Vm-s83" id="sgP-na-u0y"/>
                         <outlet property="counterLabel" destination="SIi-cT-Bxf" id="IIX-gv-3oI"/>
                         <outlet property="imageView" destination="PrX-le-heY" id="tUn-3w-nBn"/>
                         <outlet property="textLabel" destination="SEo-nu-NYj" id="nl9-rq-lPl"/>
